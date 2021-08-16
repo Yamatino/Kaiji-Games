@@ -1,0 +1,162 @@
+//Implementaciones SCSS
+ $fondofooter: #C0C0C0;
+ 
+@mixin caja($width, $height, $border) {
+    height: $height;
+    width: $width;
+    border: $border;
+}
+@mixin flexcaja($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+//mapa
+// map
+$RedesColores: (
+  "facebook": #3b5998,
+  "twitter": #1da1f2,
+  "instagram": #833ab4,
+);
+
+// each
+@each $RedesColores, $color in $RedesColores {
+  .RedesColores#{$RedesColores} {
+    background-color: $color;
+    padding: 5px;
+    height: 80px;
+    width: 80px;
+  }
+}
+
+ body{
+    background-color: #ebd7ac;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url(../imagenes/tilefondo.jpg);
+    background-size:auto;
+    background-repeat: repeat;
+    width: 100%;
+    height: auto;
+}
+.header__navigation{
+ 
+    background-image: url(../imagenes/header.jpg);
+    background-size:auto;
+    background-repeat: repeat;
+}
+/* Clase del nav menu */
+.header__menu{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    text-transform: uppercase; 
+    border-bottom: solid 5px black;
+    
+}
+.header__menu a{
+    border-bottom: solid 5px red;
+}
+.header__menu li{
+    padding-left: 200px;
+}
+.servicios__flex{
+    @include flexcaja(column);
+    flex-wrap: wrap;
+    height: 700px
+}
+.servicios__flex div{
+    @include flexcaja(column);
+    @include caja(400px, 400px, 3px solid);
+}
+ ul li{
+    display: inline-block;
+    
+} 
+li {
+    display: inline-block;
+    position:relative;
+    font-size: 25px
+ }
+ 
+/* Funcionalidad del submenu para ocultarlo  */
+ul ul {
+    position: absolute;
+    display: none;
+    background-color: gray;
+}
+ul ul li {
+    display: relative;
+    margin-left: -200px;
+    margin-bottom: 15px;
+}
+ ul li:hover ul {
+    display:block;
+}
+h1{
+    color: darkorange;
+    font-size: 32px;
+}
+
+p{
+    color: red;
+}
+table {
+    border: 3px solid;
+   }
+  
+  th {
+    background-color: #3a3a3a;
+    color: darkorange;
+    border: 1px solid;
+   }
+  
+   tr, td {
+    color: #ffc166; 
+    background-color: #3a3a3a;
+    border: 1px solid;
+   }
+
+footer{
+    color: white;
+    background-color: $fondofooter;
+    border-top: inset 5px black;
+}
+
+iframe{
+    border: solid 5px red;
+}
+.servicios__titulo{
+    color: blue;
+}
+.productos__imagen{
+    width: 200px;
+    height: 200px;
+}
+li a {
+	text-decoration: none;
+    color: white;
+}
+#indextexto{
+    font-size: 24px;
+    color: #262020;
+}
+#indeximagen{
+    object-position: 50% 50%;
+    object-fit: none;
+    width: 100%;
+    height: 500px;
+}
+#Nosotrosimagen{
+    object-position: 50% 50%;
+    object-fit: none;
+    width: 100%;
+    height: 500px;
+}
+#Titulonosotros{
+    text-align: center;
+}
+#Nosotrostexto{
+    font-size: 24px;
+    color: #262020;
+}
